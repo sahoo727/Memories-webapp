@@ -6,11 +6,11 @@ import postRoutes from "./routes/posts.js";
 
 const app = express();
 
-app.use('/posts' , postRoutes);
-
 app.use(bodyParser.json({limit:"30mb" , extended:true}));
 app.use(bodyParser.urlencoded({limit:"30mb" , extended:true}));
 app.use(cors());
+
+app.use('/posts' , postRoutes); // routes should comes below the cors and not above
 
 const CONNECTION_URL = 'mongodb+srv://sahoo:sahoo@cluster0.sdswgyr.mongodb.net/?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
