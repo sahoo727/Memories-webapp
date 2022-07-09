@@ -11,3 +11,12 @@ export const getPosts = () => async(dispatch) => {                         //red
     // const action = {type : 'FETCH_ALL', payload : []}
     // dispatch(action);                                               // here instead of returning action we dispatch it
 }
+
+export const createPost = (post) => async(dispatch) => {
+    try {
+        const  {data} = await api.createPost(post);
+        dispatch({ type:'CREATE', payload: data})
+    } catch (error) {
+        console.log(error)
+    }
+}
