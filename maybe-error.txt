@@ -1,2 +1,1 @@
-post.js in reducers ===
-form.js in form ===
+all ok buy may be during likePost

@@ -31,7 +31,28 @@ export const updatePost = async(req,res) => {
     const post = req.body;
 
     if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No post with that id');
-
+    
     const updatePost = await PostMessage.findByIdAndUpdate(_id, post,{new: true} )         // 1st parameter will be the element we need then 2nd will be entire post, then we write new : true so that we recive the real update version of the post
     res.json(updatePost);
+}
+
+export const deletePost = async(req,res) => {
+    const {id} = req.params;
+    
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No post with that id');
+    
+    await PostMessage.findByIdAndRemove(id);
+    
+    res.json({message : 'Post deleted Successfully'})
+}
+
+export const likePost = async(req,res) => {
+    const {id} = req.params;
+    
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No post with that id');
+
+    const post = await PostMessage.findById(id);
+    const likePost = await PostMessage.findByIdAndUpdate(id, {likeCount: post.likeCount + 1}, {new : true});
+
+    res.json(likePost);
 }
