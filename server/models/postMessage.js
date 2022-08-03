@@ -3,12 +3,13 @@ import mongoose from "mongoose";
 const postSchema = mongoose.Schema({        //to define the schema of database
     title: String,
     message:String,                         //feildname : type
+    name: String,
     creator:String,
     tags:[String],                          //[ ] - this tells that its array
     selectedFile:String,
-    likeCount:{                             // { } - here we include inside currly braces bcz we are defining type and also some other factor also in same feildname
-        type:Number,
-        default:0
+    likes:{                             // { } - here we include inside currly braces bcz we are defining type and also some other factor also in same feildname
+        type:[String],
+        default:[]
     },
     createdAt:{
         type:Date,

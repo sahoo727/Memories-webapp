@@ -1,1 +1,4 @@
-all ok buy may be during likePost
+all ok buy may be during likePost - there it is updatepost
+
+didnt got:
+auth.js in middleware - req.headers.authorization.split(" ")[1];
