@@ -5,7 +5,6 @@ function PostDetails() {
   return (
     <>
     <div>PostDetails</div>
-    <h1>khvhfbhh</h1>
 
     </>
   )
