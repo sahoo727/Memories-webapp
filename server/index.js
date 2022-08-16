@@ -18,6 +18,10 @@ app.use('/posts' , postRoutes); // routes should comes below the cors and not ab
 app.use('/user', userRoutes);
 const PORT = process.env.PORT || 5000;
 
+app.get('/', (req, res) => {
+    res.send('APP IS RUNNING');
+})
+
 mongoose.connect(process.env.CONNECTION_URL , {useNewUrlParser : true, useUnifiedTopology : true})
     .then(() => app.listen(PORT, () => console.log(`server running on port ${PORT}`)))
     .catch((error) => console.log(error.message));

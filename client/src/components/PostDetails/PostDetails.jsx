@@ -6,6 +6,7 @@ import moment from 'moment';
 
 import { getPost, getPostsBySearch } from '../../actions/posts';
 import useStyles from './styles';
+import CommentsSection from './CommentsSection';
 
 function PostDetails() {
   const {post, posts, isLoading } = useSelector((state) => state.posts);
@@ -49,7 +50,7 @@ function PostDetails() {
           <Divider style={{ margin: '20px 0' }} />
           <Typography variant="body1"><strong>Realtime Chat - coming soon!</strong></Typography>
           <Divider style={{ margin: '20px 0' }} />
-          <Typography variant="body1"><strong>Comments - coming soon!</strong></Typography>
+          <CommentsSection post={post} />
           <Divider style={{ margin: '20px 0' }} />
         </div>
         <div className={classes.imageSection}>
