@@ -16,7 +16,7 @@ app.use(cors());
 
 app.use('/posts' , postRoutes); // routes should comes below the cors and not above
 app.use('/user', userRoutes);
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 443;
 
 app.get('/', (req, res) => {
     res.send('APP IS RUNNING');
