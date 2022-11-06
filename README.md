@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Follow these steps to install 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Also checkout the live website here -> [Memories-webapp](https://memories-web-applx.herokuapp.com/).
 
 ## Available Scripts
 
